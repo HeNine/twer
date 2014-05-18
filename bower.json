@@ -1,0 +1,28 @@
+{
+    "name": "Twer",
+    "version": "1.0.0-SNAPSHOT",
+    "authors": [
+        "HeNine"
+    ],
+    "description": "A tower simulation",
+    "main": "twer.js",
+    "keywords": [
+        "tower",
+        "sim",
+        "game"
+    ],
+    "dependencies": {
+        "gl-matrix": "2.2.1",
+        "jquery": "2.1.x",
+        "requirejs":"2.1.x"
+    },
+    "license": "LGPL-3.0",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}

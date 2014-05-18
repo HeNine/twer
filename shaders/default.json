@@ -1,0 +1,5 @@
+{
+    "id": "DefaultShader",
+    "vertex": "vert.glsl",
+    "fragment": "frag.glsl"
+}

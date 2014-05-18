@@ -1,0 +1,31 @@
+{
+    "id": "triangle",
+    "vertices": [
+        [1, -1, 0],
+        [0, 1, 0],
+        [-1, -1, 0]
+    ],
+
+    "normals": [
+        [0, 0, 1],
+        [0, 0, 1],
+        [0, 0, 1]
+    ],
+
+    "textureCoords": [
+        [0, 0],
+        [0, 0],
+        [0, 0]
+    ],
+
+    "faces": [
+        [0, 1, 2]
+    ],
+
+    "textureImage": "models/texture/krejt.png",
+
+    "shader": {
+        "url": "shaders/default.json",
+        "id": "DefaultShader"
+    }
+}
