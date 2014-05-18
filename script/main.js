@@ -14,7 +14,7 @@ requirejs.config({
     packages: [
         {
             name: "lib/gl-matrix",
-            main: "gl-matrix-min",
+            main: "gl-matrix",
             location: "../bower_components/gl-matrix/dist"
         }
     ]
@@ -35,6 +35,9 @@ requirejs(["Game"], function (Game) {
         window.requestAnimationFrame(tick);
         if (game.scene.root.children[0] && game.scene.root.children[0].children[0]) {
             game.scene.root.children[0].children[0].r = (game.scene.root.children[0].children[0].r + 1 * (delta / 1000) * 60) % (360 * 3);
+
+            game.scene.camera.rotateBy([0, (delta / 1000) * 60, 0]);
+
             game.scene.refresh();
         }
         game.frame();

@@ -12,8 +12,36 @@ define(["lib/gl-matrix"],
             this.nWidth = nWidth;
             this.nHeight = nHeight;
 
-            this.mProjection = glm.mat4.perspective(glm.mat4.create(), Math.PI / 180 * 50, nWidth / nHeight, 0.1, 100);
+            this.mProjection = glm.mat4.perspective(glm.mat4.create(), Math.PI / 180 * 45, nWidth / nHeight, 0.1, 100);
 
+        };
+
+        Camera.prototype.getMatrix = function () {
+            var translate = glm.mat4.create();
+            glm.mat4.translate(translate, translate, this.position);
+
+            var rotateX = glm.mat4.create();
+            glm.mat4.rotateX(
+                rotateX,
+                rotateX,
+                    this.rotation[0] * Math.PI / 180);
+            var rotateY = glm.mat4.create();
+            glm.mat4.rotateY(
+                rotateY,
+                rotateY,
+                    this.rotation[1] * Math.PI / 180);
+            var rotateZ = glm.mat4.create();
+            glm.mat4.rotateZ(
+                rotateZ,
+                rotateZ,
+                    this.rotation[2] * Math.PI / 180);
+
+            glm.mat4.mul(translate, translate, rotateX);
+            glm.mat4.mul(translate, translate, rotateY);
+            glm.mat4.mul(translate, translate, rotateZ);
+            glm.mat4.invert(translate, translate);
+
+            return translate;
         };
 
         /**
@@ -48,8 +76,8 @@ define(["lib/gl-matrix"],
          *
          * @param {glm.vec3} rotateDelta
          */
-        Camera.prototype.moveBy = function (rotateDelta) {
-            glm.vec3.add(this.position, this.position, rotateDelta);
+        Camera.prototype.rotateBy = function (rotateDelta) {
+            glm.vec3.add(this.rotation, this.rotation, rotateDelta);
         };
 
         return Camera;

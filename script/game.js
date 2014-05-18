@@ -19,7 +19,7 @@ define(["jquery", "lib/gl-matrix", "resourceManager/ResourceManager", "sceneGrap
             var model = this.resourceManager.getResource({url: "models/krejt.json"}, ResourceManager.ResourceType.MODEL,
                 function (oModel) {
                     var move = new TransformNode(function (mMatrix) {
-                        return glm.mat4.translate(mMatrix, mMatrix, [0, 0, -5]);
+                        return glm.mat4.translate(mMatrix, mMatrix, [0, 0, 0]);
                     });
                     thi$.scene.root.append(move);
 
@@ -31,6 +31,8 @@ define(["jquery", "lib/gl-matrix", "resourceManager/ResourceManager", "sceneGrap
 
                     var object = new ObjectNode(oModel);
                     rotate.append(object);
+
+                    thi$.scene.camera.moveTo([0, 0, 7]);
 
                     thi$.scene.refresh();
                 }

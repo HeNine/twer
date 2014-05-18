@@ -26,6 +26,11 @@ define(["sceneGraph/Camera", "sceneGraph/TransformNode", "sceneGraph/visitor/Ren
         };
 
         Scene.prototype.refresh = function () {
+            var thi$ = this;
+            this.root.transform = function () {
+                return thi$.camera.getMatrix();
+            };
+
             var oVisitor = new RenderVisitor();
 
             oVisitor.process(this.root);
