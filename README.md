@@ -1,4 +1,4 @@
-twer
+Twer
 ====
 
 JavaScript and WebGL game
