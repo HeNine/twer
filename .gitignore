@@ -1,5 +1,6 @@
 /*.iml
 /.idea
-/bower_components
-/node_modules
-/built
+/build
+pubspec.lock
+/dartdoc-viewer
+packages

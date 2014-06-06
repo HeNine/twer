@@ -1,0 +1,10 @@
+name: Twer
+description: A tower simulation game
+version: 0.0.2
+dependencies:
+  browser: any
+  vector_math: 1.4.3
+transformers:
+- $dart2js:
+    verbose: true
+    suppressWarnings: false
